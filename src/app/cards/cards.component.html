@@ -1,9 +1,9 @@
 <h2>Bichinhos</h2>
-<ul class="heroes">
+<ul class="cards">
   <li *ngFor="let figure of figures"
     (click)="onSelect(figure)"
     [class.selected]="figure === selectedFigure">
-    <span class="badge">{{figure.id}}</span> {{figure.name}}
+    {{figure.name}}
   </li>
 </ul>
 
