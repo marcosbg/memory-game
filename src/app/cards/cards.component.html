@@ -1,0 +1,18 @@
+<h2>Bichinhos</h2>
+<ul class="heroes">
+  <li *ngFor="let figure of figures"
+    (click)="onSelect(figure)"
+    [class.selected]="figure === selectedFigure">
+    <span class="badge">{{figure.id}}</span> {{figure.name}}
+  </li>
+</ul>
+
+<div *ngIf="selectedFigure">
+  <h2>{{selectedFigure.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedFigure.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedFigure.name" placeholder="name"/>
+    </label>
+  </div>
+</div>
