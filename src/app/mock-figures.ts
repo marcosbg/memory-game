@@ -10,5 +10,7 @@ export const FIGURES: Figure[] = [
   { id: 17, name: 'Tartaruga' },
   { id: 18, name: 'Elefante' },
   { id: 19, name: 'Grilo' },
-  { id: 20, name: 'Cobra' }
+  { id: 20, name: 'Cobra' },
+  { id: 21, name: 'Coruja' },
+  { id: 22, name: 'Borboleta' }
 ];
