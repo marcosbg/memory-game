@@ -1,0 +1,7 @@
+<li *ngIf="isClicked; else hidddenCard">
+  {{figure.name}}
+</li>
+
+<ng-template #hidddenCard>
+  <li>?</li>
+</ng-template>

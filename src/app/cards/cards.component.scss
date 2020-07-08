@@ -5,29 +5,3 @@
   padding: 0;
   width: 15em;
 }
-.cards li {
-  cursor: pointer;
-  position: relative;
-  left: 0;
-  background-color: #EEE;
-  margin: .5em;
-  padding: .3em 0;
-  height: 15em;
-  border-radius: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.cards li:hover {
-  color: #607D8B;
-  background-color: #DDD;
-  left: .1em;
-}
-.cards li.selected {
-  background-color: #CFD8DC;
-  color: white;
-}
-.cards li.selected:hover {
-  background-color: #BBD8DC;
-  color: white;
-}

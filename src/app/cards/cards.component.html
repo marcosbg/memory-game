@@ -1,18 +1,9 @@
 <h2>Bichinhos</h2>
 <ul class="cards">
-  <li *ngFor="let figure of figures"
+  <app-card
+    *ngFor="let figure of figures"
     (click)="onSelect(figure)"
-    [class.selected]="figure === selectedFigure">
-    {{figure.name}}
-  </li>
+    [figure]="figure"
+    [isClicked]="selectedFigures.includes(figure)">
+  </app-card>
 </ul>
-
-<div *ngIf="selectedFigure">
-  <h2>{{selectedFigure.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedFigure.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="selectedFigure.name" placeholder="name"/>
-    </label>
-  </div>
-</div>

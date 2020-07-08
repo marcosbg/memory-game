@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
 import { Figure } from '../figure';
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
+import { OnInit, Component } from '@angular/core';
 import { FIGURES } from '../mock-figures';
 
 @Component({
@@ -8,17 +10,35 @@ import { FIGURES } from '../mock-figures';
   styleUrls: ['./cards.component.scss']
 })
 export class CardsComponent implements OnInit {
-
-  selectedFigure: Figure;
+  selectedFigures: Figure[] = [];
 
   figures = FIGURES;
+  debounce: Subject<void> = new Subject<void>();
 
-  constructor() { }
-
-  onSelect(figure: Figure): void {
-    this.selectedFigure = figure;
-  }
+  constructor() {}
 
   ngOnInit(): void {
+    this.debounce
+      .pipe(debounceTime(1000))
+      .subscribe(() => {
+          console.log('recebi um next');
+          if (this.selectedFigures[0] === this.selectedFigures[1]) {
+
+          } else {
+            this.selectedFigures = []
+          }
+      });
+  }
+
+  onSelect(figure: Figure) {
+    if (!this.selectedFigures.includes(figure)) {
+      if (this.selectedFigures.length < 2) {
+        this.selectedFigures.push(figure);
+      }
+    }
+
+    if (this.selectedFigures.length === 2) {
+      this.debounce.next();
+    }
   }
 }
