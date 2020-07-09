@@ -21,7 +21,6 @@ export class CardsComponent implements OnInit {
     this.debounce
       .pipe(debounceTime(1000))
       .subscribe(() => {
-          console.log('recebi um next');
           if (this.selectedFigures[0] === this.selectedFigures[1]) {
 
           } else {
@@ -31,7 +30,9 @@ export class CardsComponent implements OnInit {
   }
 
   onSelect(figure: Figure) {
+    // test case
     if (!this.selectedFigures.includes(figure)) {
+      // test case
       if (this.selectedFigures.length < 2) {
         this.selectedFigures.push(figure);
       }
