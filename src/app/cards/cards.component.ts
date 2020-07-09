@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Figure } from '../figure';
-import { FIGURES } from '../mock-figures';
+import { HeroService } from '../hero.service'
+import { MessageService } from '../message.service'
 
 @Component({
   selector: 'app-cards',
@@ -11,14 +12,21 @@ export class CardsComponent implements OnInit {
 
   selectedFigure: Figure;
 
-  figures = FIGURES;
+  figures: Figure[];
 
-  constructor() { }
+  constructor(private heroService: HeroService, private messageService: MessageService) { }
 
   onSelect(figure: Figure): void {
     this.selectedFigure = figure;
+    this.messageService.add(`HeroesComponent: Selected hero id=${figure.id}`);
+  }
+
+  getHeroes(): void {
+    this.heroService.getHeroes()
+        .subscribe(figures => this.figures = figures);
   }
 
   ngOnInit(): void {
+    this.getHeroes();
   }
 }

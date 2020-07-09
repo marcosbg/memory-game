@@ -7,12 +7,4 @@
   </li>
 </ul>
 
-<div *ngIf="selectedFigure">
-  <h2>{{selectedFigure.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedFigure.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="selectedFigure.name" placeholder="name"/>
-    </label>
-  </div>
-</div>
+<app-hero-detail [figure]="selectedFigure"></app-hero-detail>
