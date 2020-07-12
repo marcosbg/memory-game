@@ -5,11 +5,11 @@ import { OnInit, Component } from '@angular/core';
 import { FIGURES } from '../mock-figures';
 
 @Component({
-  selector: 'app-cards',
-  templateUrl: './cards.component.html',
-  styleUrls: ['./cards.component.scss']
+  selector: 'app-game',
+  templateUrl: './game.component.html',
+  styleUrls: ['./game.component.scss']
 })
-export class CardsComponent implements OnInit {
+export class GameComponent implements OnInit {
   selectedFigures: Figure[] = [];
 
   figures = FIGURES;

@@ -4,13 +4,13 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CardsComponent } from './cards/cards.component';
+import { GameComponent } from './game/game.component';
 import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardsComponent,
+    GameComponent,
     CardComponent
   ],
   imports: [
