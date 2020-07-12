@@ -1,7 +1,7 @@
-<li *ngIf="isSelected; else hidddenCard" [class.matched]="isMatched">
+<li *ngIf="isSelected || isMatched; else hidddenCard">
   {{figure.name}}
 </li>
 
 <ng-template #hidddenCard>
-  <li [class.matched]="isMatched">?</li>
+  <li>?</li>
 </ng-template>
