@@ -11,6 +11,7 @@ import { FIGURES } from '../mock-figures';
 })
 export class GameComponent implements OnInit {
   selectedFigures: Figure[] = [];
+  matchedFigures: Figure[] = [];
 
   figures = FIGURES;
   debounce: Subject<void> = new Subject<void>();
@@ -21,18 +22,17 @@ export class GameComponent implements OnInit {
     this.debounce
       .pipe(debounceTime(1000))
       .subscribe(() => {
-          if (this.selectedFigures[0] === this.selectedFigures[1]) {
-
-          } else {
-            this.selectedFigures = []
+          if (this.selectedFigures[0].id === this.selectedFigures[1].id) {
+            this.matchedFigures.push(this.selectedFigures[0])
+            this.matchedFigures.push(this.selectedFigures[1])
           }
+
+          this.selectedFigures = []
       });
   }
 
   onSelect(figure: Figure) {
-    // test case
     if (!this.selectedFigures.includes(figure)) {
-      // test case
       if (this.selectedFigures.length < 2) {
         this.selectedFigures.push(figure);
       }

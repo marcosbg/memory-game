@@ -4,6 +4,7 @@
     *ngFor="let figure of figures"
     (click)="onSelect(figure)"
     [figure]="figure"
-    [isClicked]="selectedFigures.includes(figure)">
+    [isSelected]="selectedFigures.includes(figure)"
+    [isMatched]="matchedFigures.includes(figure)">
   </app-card>
 </ul>

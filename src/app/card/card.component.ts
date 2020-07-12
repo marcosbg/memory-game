@@ -10,7 +10,8 @@ import { from } from 'rxjs';
 export class CardComponent implements OnInit {
 
   @Input() figure: Figure;
-  @Input() isClicked: boolean = false;
+  @Input() isSelected: boolean = false;
+  @Input() isMatched: boolean = false;
 
   constructor() { }
 
