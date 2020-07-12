@@ -1,10 +1,8 @@
 <h2>Bichinhos</h2>
 <ul class="heroes">
-  <li *ngFor="let figure of figures"
-    (click)="onSelect(figure)"
-    [class.selected]="figure === selectedFigure">
-    <span class="badge">{{figure.id}}</span> {{figure.name}}
+  <li *ngFor="let figure of figures">
+    <a routerLink="/detail/{{figure.id}}">
+      <span class="badge">{{figure.id}}</span> {{figure.name}}
+    </a>
   </li>
 </ul>
-
-<app-hero-detail [figure]="selectedFigure"></app-hero-detail>
