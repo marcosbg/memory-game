@@ -32,7 +32,7 @@ describe('CardComponent', () => {
       id: 1,
       name: "Leão"
     }
-    component.isClicked = true;
+    component.isSelected = true;
     fixture.detectChanges();
 
     expect(fixture.nativeElement.querySelector('li').textContent).toContain('Leão');
